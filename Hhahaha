@@ -25,7 +25,7 @@ local entity = spawner.Create({
 	},
 	Movement = {
 		Speed = 690,
-		Delay = 6,
+		Delay = 4,
 		Reversed = false
 	},
 	Rebounding = {
@@ -33,7 +33,7 @@ local entity = spawner.Create({
 		Type = "Ambush",
 		Min = 3,
 		Max = 3,
-		Delay = 0.7
+		Delay = 0.5
 	},
 	Damage = {
 		Enabled = true,
@@ -41,7 +41,7 @@ local entity = spawner.Create({
 		Amount = 100
 	},
 	Crucifixion = {
-		Enabled = true,
+		Enabled = false,
 		Range = 85,
 		Resist = false,
 		Break = true
@@ -76,15 +76,6 @@ end)
 
 entity:SetCallback("OnDespawning", function()
     print("Entity is despawning")
-local achievementGiver = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
-
----====== Display achievement ======---
-achievementGiver({
-    Title = "Smiling Is Better",
-    Desc = "Why you hide?",
-    Reason = "Survival From Boppies",
-    Image = "rbxassetid://115491907195141"
-})
 end)
 
 entity:SetCallback("OnDamagePlayer", function(newHealth)
